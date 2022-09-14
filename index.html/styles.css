@@ -1,0 +1,838 @@
+@charset "utf-8";
+
+body{
+  box-sizing: border-box;
+
+}
+
+a{
+  text-decoration: none;
+  color:#676767 ;
+}
+
+html{
+  font-size: 62.5%;
+  color: #676767;
+  font-family: "Noto Serif JP",serif, 'メイリオ', Meiryo,'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+
+.fadein{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s;
+}
+
+
+
+/* ================================================================
+header
+================================================================ */
+
+header{
+  width: 100%;  
+}
+
+.header-container{
+  background-color: #fff;
+  margin-top:20px ;
+}
+
+.header-flex{
+  display: flex;
+  justify-content: space-between;
+  padding:0 5% 0 5%;
+}
+
+.header-right{
+  font-size: 2rem;
+  margin:auto 0;
+  display: block;
+  background-image: url(images/Tel.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+}
+
+.header-logo h1 img{
+  height: 60%;
+}
+
+.header-logo {
+  display: flex;
+}
+
+.logo-right{
+  font-size: 2rem;
+  margin-left:15px; 
+}
+
+.logo-right h2{
+  margin-bottom: 10px;
+}
+
+.logo-right h2 span{
+  margin-left:15px;
+}
+
+.header-menu{
+  margin-top: 10px;
+  height:50px;
+  width: 100%;
+}
+
+.header-menu nav ul{
+  display: flex;
+  justify-content: center;
+  height:50px;
+  background-color: #f5782c; 
+  width: 100%;
+}
+
+.header-menu nav ul li{
+  width: 18%;
+}
+
+.header-menu nav ul li a{
+  font-size: 2rem;
+  display: block;
+  width: 100%;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  transition: all 0.5s;
+  color:#fff;
+}
+
+.header-menu nav ul li a:hover{
+  background-color:#fe7918;
+  opacity: 0.4;
+  color:fdf7f2;
+}
+
+
+.toggle-btn{
+  display: block;
+  position: relative;
+  width: 2rem;
+  height: 1.75rem;
+  display: none;
+}
+
+.toggle-btn i{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  transition: all .5s;
+}
+
+.toggle-btn i:nth-child(1){
+  top:0;
+}
+
+.toggle-btn i:nth-child(2){
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+.toggle-btn i:nth-child(3){
+  bottom: 0;
+}
+
+.toggle-btn.show i:nth-child(1){
+  transform: translateY(11px)rotate(-45deg);
+}
+
+.toggle-btn.show i:nth-child(2){
+  opacity: 0;
+}
+.toggle-btn.show i:nth-child(3){
+  transform: translateY(-5px)rotate(45deg);
+}
+
+.toggle-btn:hover{
+  cursor: pointer;
+  }
+
+
+#g-nav{
+  position:fixed;
+  z-index: 999;
+  top:0;
+  left:-300px;
+  width:300px;
+  height: 100vh;
+  background:#fff;
+  opacity: .8;
+  transition: all 0.6s;
+}
+
+#g-nav.panelactive{
+  left: 0;
+}
+
+#g-nav.panelactive #g-nav-list{
+  position: fixed;
+  z-index: 999; 
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#g-nav ul {
+  position: absolute;
+  z-index: 999;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+#g-nav li{
+	list-style: none;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+  font-size: 1.6rem;
+}
+/* ================================================================
+Top-Scroll__btn
+================================================================ */
+.top{
+  position: absolute;
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  z-index: 999;
+  width: 80px;
+  height: 60px;
+  background-color: #5271FF;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 15px;
+  transition: all 0.9s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.top a{
+  display: block;
+  height: 80px;
+  color:#fff;
+  font-size: 1.2rem;
+}
+
+.top:hover{
+  transform: translateY(5px);
+}
+
+.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* ================================================================
+mainvisual
+================================================================ */
+
+
+
+.mainvisual img{ 
+width: 100%;
+}
+
+.slick-prev{
+  left:50px;
+  z-index: 100;
+}
+
+.slick-next{
+  right: 50px;
+}
+
+
+
+/* ================================================================
+intro
+================================================================ */
+.intro{
+  margin-top: 150px;
+  margin-bottom: 138px;
+}
+
+.title{
+  height:60px;
+  background-color: #f5782c;
+  margin:0 12%;
+  font-size: 4rem;
+  color:#fff;
+  line-height: 60px;
+  text-align: center;
+}
+
+.intro-flex{
+  display: flex;
+  justify-content: center;
+  margin: 100px 10% 100px 10%;
+  margin-bottom: 0;
+}
+
+.top-intro{
+  margin-right: 50px;
+}
+
+.top-intro h4 img{
+  height: 540px;
+  object-fit: cover;
+}
+
+.intro-text{
+  width: 400px;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-right: 10px;
+}
+
+ .text-01{
+  margin-bottom: 15px;
+}
+
+#top01{
+  font-size: 2.4rem;
+  color: #bfa37a;
+  padding-top: 10px;
+}
+
+#top-name{
+  margin-left: 15px;
+  color: #bfa37a;
+}
+
+#top02{
+  color: #bfa37a;
+  font-size: 3.6rem;
+}
+
+/* ================================================================
+education
+================================================================ */
+
+
+
+.wrapper{
+  padding:0 12%;
+}
+
+.education-visual{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.education-visual img {
+  height: 50vh;
+  width: 60%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.education-text{
+  display: block;
+  width: 95%;
+  margin: 80px auto 90px auto;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1.8;
+  background-image: url(images/education-text-bgi.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: bottom center ;
+}
+
+
+.education-text01{
+  margin-bottom: 30px;
+  text-align: justify;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin: 0 auto 150px auto;
+  width: 80%;
+}
+
+
+
+
+/* ================================================================
+teachers
+================================================================ */
+.teachers-list{
+margin-top: 150px;
+}
+
+.teachers-list img{
+  width: 50%;
+  object-fit: cover;
+  object-position:center;
+  border-radius: 10px;
+}
+
+.teachers-list li:nth-child(1) img{
+  object-position: right;
+}
+.teachers-list li:nth-child(2) img{
+  object-position:20% 50%;
+}
+.teachers-list li:nth-child(3) img{
+  object-position: 75% 50%;
+
+}
+.teachers-list li:nth-child(4) img{
+  object-position: 30% 50%;
+}
+
+.teachers-list li{
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.teachers-intro{
+  width: 100%;
+  height: 100%;
+}
+
+
+.teachers-list li:nth-child(even){
+  flex-direction: row-reverse;
+}
+
+.teachers-list li:nth-child(even) .teachers-intro{
+  padding-right:50px;
+}
+
+.teachers-list li:nth-child(odd) .teachers-intro{
+  padding-left:50px;
+}
+
+
+
+.teachers-name{
+  font-size: 3.6rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom:3px solid #f5782c;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.teachers-text{
+  font-size: 1.8rem;
+  width: 100%;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+  /* ================================================================
+footer
+================================================================ */
+
+
+footer{
+  padding-top: 50px;
+  overflow: hidden;
+  }
+  
+  .fadein__footer{
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.7s;
+  }
+
+ footer p{
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-left:15px;
+  margin-top: 50px;
+}
+
+footer p a::before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 10px;
+  border-color: transparent transparent transparent #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -10px;
+  }
+
+
+.footer-menu__02{
+  display: block;
+}
+
+footer a:hover{
+  background-color: #dfdfdf;
+  opacity: 0.7;
+}
+
+.privacy{
+  display: block;
+}
+
+.footer-logo{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.footer-logo-text{
+  display: block;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.footer-image{
+  display: flex;
+  list-style: none;
+  opacity:.3;
+}
+
+
+.footer-menu{
+  width: 100px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  height:60px;
+  width: 100%;
+}
+
+.footer-menu nav ul{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+.footer-menu nav ul li{
+  width: 100%;
+
+}
+
+.footer-menu nav ul li a{
+  font-size: 1.4rem;
+  display: block;
+  width: 100%;
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  transition: all 0.5s;
+  color:#000;
+}
+
+.footer-menu nav ul li a:hover{
+  background-color:#fdf7f2;
+  opacity: 0.8;
+  color:#333
+}
+
+
+  /* ==============================================================
+caution
+================================================================ */
+
+
+.caution{
+  background-color:#efefef ;
+}
+
+.caution01{
+  padding-top: 30px;
+  font-size: 1.6rem;
+  margin-top: 50px;
+  line-height: 1.5;
+  padding-left: 10px; 
+  text-align: center; 
+}
+
+#copyright{
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+ /* ==============================================================
+media
+================================================================ */
+
+@media(max-width:757px){
+
+  .header-container{
+    padding:20px 5% 10px 5% ;
+  }
+
+  .title{
+    margin:0 5%;
+  }
+
+  .wrapper{
+    padding:0 5%;
+  }
+
+  .caution{
+    margin:0 5%; 
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .toggle-btn{
+    display: block;
+    top:25px;
+  }
+  
+  .header-menu{
+    display: none;
+  }
+
+  .top-intro{
+    margin: 30px 0 30px 0;
+  }
+
+  .intro-flex{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .top-intro h4 img{
+    height: 200px;
+  }
+  .intro-text{
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  #top01,#top02{
+   text-align: center;
+  }
+
+  #top02{
+    margin-bottom:  30px;
+  }
+
+  .teachers-list li{
+    flex-direction: column;
+    margin-top :150px;
+  }
+
+  .teachers-list li img,.teachers-intro{
+    width: 100%;
+  }
+
+  .teachers-list li:nth-child(even){
+    flex-direction: column;
+  }
+
+  .teachers-name {
+    text-align: center;
+    width: 100%;
+  }
+
+  .teachers-text{
+    width: 100%;
+  }
+
+  .footer-menu{
+    display: none;
+  }
+
+  footer p, .privacy a{
+    display: block;
+  } 
+
+  .teachers-list li:nth-child(even) .teachers-intro{
+    padding-right: 0;
+  }
+
+  .teachers-list li:nth-child(odd) .teachers-intro{
+    padding-left:0;
+  }
+}
+/* medeia 757px  */
+
+
+@media(max-width:500px){
+
+  .header-container{
+    padding:20px 0 10px 0 ;
+  }
+
+  .intro{
+    margin:100px 0;
+  }
+
+.mainvisual img{
+  height: 350px;
+  object-fit: cover;
+}
+
+.mainvisual__img02-position{
+  object-position: 60% 0;
+}
+
+  .title{
+    margin:0 5%;
+  }
+
+  .wrapper{
+    padding:0 5%;
+  }
+
+  .caution{
+    margin:0 5%; 
+  }
+
+  .intro-text{
+    font-size: 1.6rem;
+    width: 90%;
+  }
+
+  .intro-text{
+    margin:0 auto;
+    width: 250px;
+  }
+
+  .education-visual img{
+    height: 30vh;
+
+  }
+
+  .education-text h3{
+    font-size: 3.6rem;
+    width:100%;
+    text-align: center;
+  }
+
+  .teachers-visual img{
+    display: none;
+  }
+
+  .teachers-text{
+    width: 100%;
+
+  }
+
+  .teachers-list li:last-child{
+    margin-bottom: 0;
+  }
+
+  .teachers-list li:nth-child(even) .teachers-intro{
+    padding-right: 0;
+  }
+
+  .teachers-list li:nth-child(odd) .teachers-intro{
+    padding-left:0;
+  }
+
+footer{
+  padding-top: 0;
+}
+
+  .footer-logo{
+    margin: 60px 0;
+  }
+
+  .footer-image{
+    display: none; 
+  }
+}
+/* media 500px  */
+
+
+@media(min-width:1000px){
+  
+  .mainvisual img{
+    width: 100%;
+    height: calc(100vh - 140px);
+    object-fit: cover;
+    /* object-position:50% 12%; */
+  }
+
+  .mainvisual__img01-position{
+    object-position: 0% 0% !important;
+  }
+
+  .mainvisual__img02-position{
+    object-position:center!important;
+  }
+
+  .mainvisual__img03-position{
+    object-position: 40%  40%!important;
+  }
+
+  .mainvisual__img04-position{
+    object-position: 40% 15%!important;
+  }
+  .mainvisual__img05-position{
+    object-position: 40% 5%!important;
+  }
+
+} 
+ /* media 1000px  */
+
+ @media(max-width:900px){
+
+
+  .top-intro h4 img{
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .teachers-list img{
+    height: 48vh;
+  }
+
+  .teachers-list li:nth-child(1) img{
+   object-position: 85% 0%;
+  }
+
+
+}
+@media(max-width: 300px){
+
+  .mainvisual img{
+    object-fit: contain;
+    height: 250px;
+  }
+
+  .mainvisual{
+    height: 250px;
+  }
+
+  .mainvisual__img02-position{
+    object-position: 0;
+  }
+}
+  
+
